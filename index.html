@@ -14,7 +14,8 @@
 		<!-- For syntax highlighting -->
     <!--<link rel="stylesheet" href="lib/css/zenburn.css"> -->
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-		<script>
+    <!--
+    <script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
 				var link = document.createElement( 'link' );
 				link.rel = 'stylesheet';
@@ -23,6 +24,7 @@
 				document.getElementsByTagName( 'head' )[0].appendChild( link );
 			}
 		</script>
+    -->
 	</head>
 
 	<body>
@@ -88,7 +90,6 @@
               <li>Uniquely identify individuals</li>
               <li>Complex and random</li>
               <li>Always in user's possesion</li>
-              <li>Require the user to be present during authentication</li>
             </ul>
 					</section>
 
@@ -96,7 +97,6 @@
 						<h2>Disadvantages of Using Biometrics for Authentication</h2>
             <ul>
               <li>Sample collection process is influenced by environmental conditions</li>
-              <li>Lack of standardisation</li>
               <li>Changes over time due to ageing, illness or injury</li>
             </ul>
 					</section>
@@ -128,8 +128,6 @@
               ## Secret keys
 
               * Cryptographically strong keys are rather large and random
-
-              * Not feasible to let users memorise their secret keys
 
               * Generally, 
                 * Store the secret key in a smart card
