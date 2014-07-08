@@ -34,11 +34,17 @@
 					<h1>Overview of Biometric Security</h1>
 					<h4></h4>
           <br>
-					<p> <small>Created by Andrew CS Sim</small> </p>
+					<p> <small>by Andrew CS Sim</small> </p>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
+          <section data-markdown>
+            <script type="text/template">
+              # Biometrics
+            </script> 
+          </section>
+
           <section data-markdown>
             <script type="text/template">
               ## What is Biometrics?
@@ -47,9 +53,6 @@
 
               * It refers to measurable data that uniquely describes an individual's behavioural or physical traits
             </script>
-				  	<aside class="notes">
-              In terms of computer security
-				  	</aside>
           </section>
 
           <section data-markdown>
@@ -60,7 +63,6 @@
               * fingerprint
               * iris
               * earprint
-              * vascular patterns
               * voice
               * signature
             </script> 
@@ -70,103 +72,54 @@
             <script type="text/template">
               ## Biometric Authentication Systems
               
-              In a nutshell, biometric authentication systems are pattern recognition systems that can recognise highly distinctive patterns and associate them to a person. 
+              * Pattern recognition systems that can recognise highly distinctive patterns and associate them to a person 
 
-              Generally, it involves the "__enrolment__" process and the "__authentication__" process. The image goes here: 
-
-              * Biometric Capture
-              * Feature Extraction
-              * Storage
-              * Matcher
+              * Generally involves: 
+                * __Enrolment__ process 
+                  <br> <img src="resources/biometric-enrolment.png" alt="Biometric Enrolment" height="128">
+                * __Authentication__ process. 
+                  <br><img src="resources/biometric-authentication.png" alt="Biometric Enrolment" height="128">
             </script>
-					  <aside class="notes">
-              In a nutshell
-					  </aside>
 				  </section>
 
 					<section>
-						<h2>Advantage of biometrics</h2>
+						<h2>Advantage of Using Biometrics for Authentication</h2>
             <ul>
-              <li>uniquely identify individuals</li>
-              <li>more complex and random</li>
-              <li>always in user's possesion</li>
-              <li>require the user to be present during biometric verification</li>
+              <li>Uniquely identify individuals</li>
+              <li>Complex and random</li>
+              <li>Always in user's possesion</li>
+              <li>Require the user to be present during authentication</li>
             </ul>
 					</section>
 
 					<section>
-						<h2>Disadvantages of biometrics</h2>
+						<h2>Disadvantages of Using Biometrics for Authentication</h2>
             <ul>
-              <li>biometric measurements are unavoidably noisy</li>
-              <li>sample collection process is influenced by environmental conditions</li>
-              <li>lack of standardisation</li>
-              <li>changes over time due to ageing, illness or injury</li>
+              <li>Sample collection process is influenced by environmental conditions</li>
+              <li>Lack of standardisation</li>
+              <li>Changes over time due to ageing, illness or injury</li>
             </ul>
-
-					  <aside class="notes">
-              A dry finger print and a normal finger print will produce different readings.
-					  </aside>
 					</section>
-
 				</section>
-
-        <section>
-				  <section>
-				  	<h2>Verification and Identification</h2>
-          </section>
-
-				  <section>
-				  	<h2>Verification</h2>
-            <p>
-              A user claims to be someone who needs to be veriﬁed and thus only an one-to-one comparison has to be performed by the biometric authentication system
-            </p>
-          </section>
-
-				  <section>
-				  	<h2>Identification</h2>
-            <p>
-              A user needs to be identiﬁed and therefore a one-to-many comparison has to be performed
-            </p>
-
-					  <aside class="notes">
-              Both have to be traded-off, as reducing FAR increases FRR and vice versa. 
-              For example, if an authentication scheme tends to be tolerant with respect to accepting similar biometric data, the FAR of this system will be very high while the FRR would be satisfying.
-					  </aside>
-          </section>
-				</section>
-
-        <section>
-          <section>
-            <h2>Performance Measurement</h2>
-            <p>
-              Due to the fuzziness of the matching process of biometric authentication systems, there are two main types of errors:
-            </p>
-          </section>
-          <section>
-            <h3>Falce Acceptance</h3>
-            <p>
-              Misrecognising biometrics of two differnet persons to be of the same person
-            </p>
-          </section> 
-            
-          <section>
-            <h3>False Rejection</h3>
-            <p>
-              Misrecognising biometrics of the same person to be of two different persons
-            </p>
-          </section>
-        </section>
 
         <section> 
           <section data-markdown>
             <script type="text/template">
-              ## Generic Cryptosystems
+              # Combining Biometrics and Cryptography
+            </script>
+          </section>
 
-              * In a public key cryptosystem, the following pair of keys are generated:
+          <section data-markdown>
+            <script type="text/template">
+              ## Generic Public Key Cryptosystems
+
+              * The following pair of matching keys are generated:
                 * Public key 
                 * Secret key
-              * Public key will be used to encrypt a secret message
-              * Secret will be used to decrypt the encrypted message
+                
+              * Public key is used to encrypt a secret message
+
+              * Secret key is used to decrypt the encrypted message
             </script>
           </section>
 
@@ -175,35 +128,44 @@
               ## Secret keys
 
               * Cryptographically strong keys are rather large and random
+
               * Not feasible to let users memorise their secret keys
-              * Thus, 
+
+              * Generally, 
                 * Store the secret key in a smart card
                 * Use a password to lock the secret key
             </script>
-				  	<aside class="notes">
-              Not feasible to let users memorize their secret key
-				  	</aside>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ## Attacks  
+              ## Drawbacks  
 
-              * Smart cards can be stolen and can be replicated
-              * Passwords can be cracked using various attack methods
+              * Smart cards can be stolen
+
+              * The secret key is as secure as the password that was chosen to lock it
+
               * The system is not able to differentiate between a legitimate person and an attacker
             </script>
           </section>
-        </section>
 
-        </section>
           <section data-markdown>
             <script type="text/template">
               ## Combining Biometrics and Cryptography  
 
-              * The authentication procedure can simply be replaced through biometric authentication
-              * Strengthen the already existing password by means of biometrics (2-factor authentication)
-              * Biometric input can even be used directly to generate a cryptographic key or a biometric hash out of it.
+              * The password can be replaced by biometric authentication
+              
+              * Add biometric authentication on top of exisiting password protection (2-factor authentication)
+
+              * Use biometric input directly to generate a cryptographic key or a biometric hash out of it
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              # Key Release Scheme
             </script>
           </section>
 
@@ -211,47 +173,68 @@
             <script type="text/template">
               ## Key Release Scheme 
 
-              * Cryptography keys and biometric data are independent of each other 
-              * Biometric data is used to authenticate a user, if suceeded, then the key is released
-              * Key could easily be modified, updated or replaced at any time in case it is compromised (cancellable)
-              * Vulnerabilities:
-                * Biometric matching process could be manipulated (or by-passed) by attackers
-                * The cryptographic key has to be stored as part of the template
+              * Biometric data is used for authentication, if succeeded, then the key is released
+
+              * Secret keys and biometric data are independent of each other 
+
+              * Can be expanded to multi-factor authentication
+
+              * Keys could easily be modified or be replaced at any time in case it is compromised (cancellable)
             </script>
           </section>
 
           <section data-markdown>
             <script type="text/template">
-              ## Key Binding Scheme
+              ## Drawbacks of Key Release Scheme
+              
+              * Biometric matching process could be manipulated or by-passed by attackers
 
-              * Cryptographic key is directly derived from the user's biometric data 
+              * False acceptance or false rejection might happen
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <script type="text/template">
+              # Key Binding Scheme
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ## Simple Key Binding Scheme
+
+              * Secret key is directly derived from the user's biometric data 
+
               * Does not need to be stored anywhere
-              * Vulnerabilities:
-                * Could not be changed if it was compromised once
-              * To achieve cancellable keys, it's common to combine the user's biometric data with the cryptographic key.
-              * A more secure environment is provided by combining the key and the template  together, the key is intelligently mixed with the biometric data.
-              * Single step
+
+              * Drawbacks:
+                * Have to find ways to deal with noise in biometric data
+                * Could not be changed if the secret key has been compromised once
             </script>
           </section>
 
-
           <section data-markdown>
             <script type="text/template">
-              ## Cancellable Biometrics
+              ## Cancellable Key Binding Scheme
 
-              * Unlike PINs or passwords, biometric characteristics are permanently associated with a person and cannot be change.
-              * If biometric data is stolen (e.g., capturing images of iris or recording a person's voice) then the biometric data becomes useless and is lost forever
+              * Biometric characteristics are permanently associated with a person and cannot be change
 
-              Intermediate step has to be established, which adds secret information.
-              * Commonly used approach is to apply transform functions the the biometric data
-              * If a transformed sample of a person's biometrics is compromised only the transform function has to be changed.
+              * If biometric data is compromised (e.g., capturing images of iris or recording a person's voice) then the biometric data becomes useless and is lost forever
+
+              * To achieve cancellable, intermediate steps have to be established
+                * Apply transform functions to the biometric data
+                * If the transformed biometrics is compromised, only the transform function has to be changed
+
+              * To achieve cancellable keys, it's common to combine the user's biometric data with the cryptographic key.
             </script>
           </section>
         </section>
 
 				<section>
-					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h1>THANK YOU</h1>
+					<h3>BY Andrew CS Sim / andrews@cakesolutions.net / @andrewcssim</h3>
 				</section>
 
 			</div>
@@ -273,10 +256,6 @@
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
